@@ -5,15 +5,24 @@ export function signInRequest(email, password) {
   };
 }
 
-export function signInSucess(token, user) {
+export function signInSuccess(token, user) {
   return {
-    type: '@auth/SIGN_IN_SUCESS',
+    type: '@auth/SIGN_IN_SUCCESS',
     payload: { token, user },
   };
 }
 
-export function signFailure() {
+export function signUpRequest(name, email, password) {
   return {
-    type: '@auth/SIGN_FAILURE',
+    type: '@auth/SIGN_UP_REQUEST',
+    payload: { name, email, password },
   };
+}
+
+export function signFailure() {
+  return { type: '@auth/SIGN_FAILURE' };
+}
+
+export function signOut() {
+  return { type: '@auth/SIGN_OUT' };
 }
